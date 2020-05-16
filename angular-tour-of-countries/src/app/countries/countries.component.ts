@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { Country } from '../country';
+import { CountryService } from '../country.service';
 
 @Component({
   selector: 'app-countries',
@@ -11,19 +11,29 @@ export class CountriesComponent implements OnInit {
 
   countries: Array<any> = new Array<any>();
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private countryService: CountryService,
+    private httpClient: HttpClient,
+    ) { }
 
   ngOnInit(): void {
     this.getCountries();
   }
 
-  getCountries() {
-    this.httpClient.get('https://restcountries.eu/rest/v2/all')
+  getCountries():void {
+    this.countryService.getCountries()
     .subscribe(
+
+      
+      countries => this.countries = countries
+      
+      
+      
+      /*
       data => {
         this.countries = this.countries.concat(data);
       }
+      */
     );
   }
-
 }
