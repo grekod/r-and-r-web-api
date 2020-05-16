@@ -1,0 +1,11 @@
+<ul >
+  <li *ngFor="let country of countries" class="cBox" >
+    <div routerLink="/countries/{{country.name}}">
+        <a>{{country.name}},</a>
+        <a>{{country.capital}},</a>
+        <a>{{country.region}},</a>
+        <a>{{country.subregion}}</a>
+    </div>
+  </li>
+
+</ul>
