@@ -38,6 +38,4 @@ export class CountryService {
     
     return this.httpClient.get<Array<any>>(`${this.countryUrl}${term}`);
   }
-
-
 }
