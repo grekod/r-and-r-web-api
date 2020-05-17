@@ -23,17 +23,7 @@ export class CountriesComponent implements OnInit {
   getCountries():void {
     this.countryService.getCountries()
     .subscribe(
-
-      
       countries => this.countries = countries
-      
-      
-      
-      /*
-      data => {
-        this.countries = this.countries.concat(data);
-      }
-      */
     );
   }
 }

@@ -21,8 +21,8 @@ export class CountryService {
   }
 
  getCountry(name: string): Observable<any> {
-  const url = `${this.countryUrl}${name}`;
-  return this.httpClient.get<any>(url).pipe();
+    const url = `${this.countryUrl}${name}`;
+    return this.httpClient.get<any>(url).pipe();
 }
 
   httpOptions = {

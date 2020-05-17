@@ -1,12 +1,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="card">
+<div >
 
-    <div>
-        <p>Name: {{country.name}} </p>
-        <p>Name: {{country.capital}} </p>
-        <p>Name: {{country.region}} </p>
-        <p>Name: {{country.subregion}} </p>
+    <div class="card">
+        <src="{{country[0].flag}}">
+        <p>Name: {{country[0].name}} </p>
+        <p>Capital: {{country[0].capital}} </p>
+        <p>Region: {{country[0].region}} </p>
+        <p>SubRegion: {{country[0].subregion}} </p>
+        <p>Population: {{country[0].population}} </p>
+        <p>Demonym: {{country[0].demonym}} </p>
+        <p>Area: {{country[0].area}} </p>
+        <p></p>
+        <p>timezones:
+          <li *ngFor="let item of country[0].timezones">
+            <a>{{item}}</a>
+          </li>
+        </p>
     </div>
 
 </div>
