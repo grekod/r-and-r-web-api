@@ -1,14 +1,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="card">
-
-    <div>
-        <p>Name: {{country.name}} </p>
-        <p>Name: {{country.capital}} </p>
-        <p>Name: {{country.region}} </p>
-        <p>Name: {{country.subregion}} </p>
-    </div>
-
+<div >
+  <div class="card">
+      <img src={{country[0].flag}} alt="{{country[0].name}} image" style="width:100%">
+      <h2><a>Name:</a> {{country[0].name}} </h2>
+      <p><a>Capital:</a> {{country[0].capital}} </p>
+      <p><a>Region:</a> {{country[0].region}} </p>
+      <p><a>SubRegion:</a> {{country[0].subregion}} </p>
+      <p><a>Population:</a> {{country[0].population}} </p>
+      <p><a>Demonym:</a> {{country[0].demonym}} </p>
+      <p><a>Area:</a> {{country[0].area}} </p>
+      <p><a>Timezones:</a>
+        <li *ngFor="let item of country[0].timezones">
+          {{item}}
+        </li>
+      </p>
+  </div>
 </div>
 
 <button (click)=goBack()> Go Back</button>

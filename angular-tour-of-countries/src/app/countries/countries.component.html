@@ -1,10 +1,13 @@
+<app-country-search></app-country-search>
 <ul >
-  <li *ngFor="let country of countries" class="cBox" >
+  <li *ngFor="let country of countries" class="cBox">
     <div routerLink="/countries/{{country.name}}">
-        <a>{{country.name}},</a>
-        <a>{{country.capital}},</a>
-        <a>{{country.region}},</a>
-        <a>{{country.subregion}}</a>
+        <a>
+          <p class="name">{{country.name}}</p>
+          <p>Capital: {{country.capital}}</p>
+          <p>Region: {{country.region}}</p>
+          <p>Subregion: {{country.subregion}}</p>
+        </a>
     </div>
   </li>
 

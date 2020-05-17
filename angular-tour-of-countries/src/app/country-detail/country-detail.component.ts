@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { Location } from '@angular/common';
+import { Location, ɵBrowserPlatformLocation } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { CountryService }  from '../country.service';
+import { Variable } from '@angular/compiler/src/render3/r3_ast';
 
 @Component({
   selector: 'app-country-detail',
@@ -26,18 +27,11 @@ export class CountryDetailComponent implements OnInit {
   }
 
   getCountry() {
-    console.log(this.route.snapshot.paramMap.get('name'))
-      this.route.paramMap.subscribe((params) => {
-      this.name = params.get("name")
-    })
-    console.log(name);
-    //const name = this.route.snapshot.paramMap.get('name');
-    this.countryService.getCountry(name)
-      .subscribe(country => this.country = country);
+    this.countryService.getCountry(this.route.snapshot.paramMap.get('name'))
+      .subscribe(data => this.country = data);
   }
 
   goBack(): void {
     this.location.back();
   }
-
 }
