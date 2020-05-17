@@ -21,5 +21,8 @@ label {
     padding: 20px;
   }
   li {
-    padding-left: 100px;
+    text-align: center;
+  }
+  a{
+    font-weight: bold;
   }
